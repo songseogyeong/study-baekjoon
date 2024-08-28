@@ -19,5 +19,56 @@
 # 각 테스트케이스마다 A+B를 한 줄에 하나씩 순서대로 출력한다.
 
 
-# 풀이
-test = 0
+# 기존 풀이
+T = int(input())
+
+for i in range(T):
+  A, B = map(int, input().split())
+  print(A + B)
+
+
+# 공부
+import sys
+
+# 한 줄의 텍스트 입력: sys.stdin.readline()
+# input()과 비슷하지만 대량의 입력을 다룰 때 사용되며, input()보다 더 효율적임
+# 줄 바꿈 문자를 그대로 포함하여 읽어오므로 텍스트 처리에서 유용함
+A = sys.stdin.readline()
+
+# sys.stdin.readline()는 개행문자 \n이 포함되어 출력됨
+print(A)
+
+# 개행문자 \n 제거
+print(A, end="")
+
+# strip() 문자열 양 끝의 모든 공백 문자 제거
+# rstrip() 오른쪽, lstrip() 왼쪽 공백 문자 제거
+A = sys.stdin.readline().strip()
+
+# sys.stdout.write(): 출력, 문자열만 가능
+# 자동 개행이 없으며, print()보다 속도가 빠를 수 있음
+sys.stdout.write(A)
+
+
+# 풀이 1
+import sys
+
+T = int(sys.stdin.readline().rstrip())
+
+for i in range(T):
+  A, B = map(int, sys.stdin.readline().split())
+  print(A + B)
+
+
+# 풀이 2
+import sys
+
+T = int(sys.stdin.readline().rstrip())
+
+result = []
+
+for i in range(T):
+  A, B = map(int, sys.stdin.readline().split())
+  result.append(A + B)
+
+sys.stdout.write('\n'.join(map(str, result)))
