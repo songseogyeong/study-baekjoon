@@ -20,3 +20,5 @@ for i in range(1, T + 1):
   C = A + B
   
   print(f"Case #{i}: {A} + {B} = {C}")
+
+# test
