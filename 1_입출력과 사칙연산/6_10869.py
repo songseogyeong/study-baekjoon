@@ -36,3 +36,9 @@ print(A % B)
 A, B = map(int, input().split())
 
 print('%d\n%d\n%d\n%d\n%d'%(A + B, A - B, A * B, A // B, A % B))
+
+
+# 응용
+A, B = map(int, input().split())
+
+print(f'{A + B}\n{A - B}\n{A * B}\n{A // B}\n{A % B}')
