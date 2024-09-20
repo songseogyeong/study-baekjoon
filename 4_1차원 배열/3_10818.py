@@ -12,4 +12,16 @@
 # 첫째 줄에 주어진 정수 N개의 최솟값과 최댓값을 공백으로 구분해 출력한다.
 
 
-# 풀이
+# 풀이 1
+N = int(input())
+num = list(map(int, input().split()))
+
+if len(num) == N:
+  print(min(num), max(num))
+
+
+# 풀이 2
+N = int(input())
+num = list(map(int, input().split()))
+
+print(min(num), max(num))
