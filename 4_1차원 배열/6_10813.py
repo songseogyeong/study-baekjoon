@@ -17,6 +17,36 @@
 # 1번 바구니부터 N번 바구니에 들어있는 공의 번호를 공백으로 구분해 출력한다.
 
 
-# 풀이
+# 풀이 1
 N, M = map(int, input().split())
 
+count = 0
+
+result = []
+
+for _ in range(N):
+    count += 1
+    result.append(count)
+
+for _ in range(M):
+    i, j = map(int, input().split())
+
+    num1 = result[i - 1]
+    num2 = result[j - 1]
+
+    result[i - 1] = num2
+    result[j - 1] = num1
+
+print(' '.join(map(str, result)))
+
+
+# 풀이 2
+N, M = map(int, input().split())
+
+result = list(range(1, N + 1))
+
+for _ in range(M):
+    i, j = map(int, input().split())
+    result[i - 1], result[j - 1] = result[j - 1], result[i - 1]
+
+print(' '.join(map(str, result)))
