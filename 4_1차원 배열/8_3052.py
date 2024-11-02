@@ -13,6 +13,6 @@
 
 
 # 풀이
-num_list = list(input() for i in range(10))
+num_list = list(int(input()) for i in range(10))
 
 print(num_list)
