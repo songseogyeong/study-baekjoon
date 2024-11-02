@@ -14,5 +14,6 @@
 
 # 풀이
 num_list = list(int(input()) for i in range(10))
+check_set = set(i % 42 for i in num_list)
 
-print(num_list)
+print(len(check_set))
