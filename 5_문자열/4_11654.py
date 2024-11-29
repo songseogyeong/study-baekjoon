@@ -12,3 +12,6 @@
 
 
 # 풀이
+text = input()
+
+print(ord(text))
