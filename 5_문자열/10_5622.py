@@ -18,4 +18,27 @@
 # 첫째 줄에 다이얼을 걸기 위해서 필요한 최소 시간을 출력한다.
 
 
-# 풀이
+# 풀이 1
+alphabet = input()
+number = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+result = 0
+
+for char in alphabet:
+    for num in number:
+        if char in num:
+            result += number.index(num) + 3
+
+print(result)
+
+
+# 풀이 2
+alphabet = input().strip()
+number = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+result = 0
+
+for char in alphabet:
+    for idx, group in enumerate(number):
+        if char in group:
+            result += idx + 3
+
+print(result)
