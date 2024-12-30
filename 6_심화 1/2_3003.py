@@ -16,4 +16,29 @@
 # 만약 수가 양수라면 동혁이는 그 개수 만큼 피스를 더해야 하는 것이고, 음수라면 제거해야 하는 것이다.
 
 
-# 풀이
+# 풀이 1
+white_pieces = list(map(int, input().split()))
+
+count = 0
+
+for i in white_pieces:
+    if count < 2:
+        white_pieces[count] = 1 - i
+    elif 1 < count < 5:
+        white_pieces[count] = 2 - i
+    else:
+        white_pieces[count] = 8 - i
+
+    count += 1
+
+print(' '.join(map(str, white_pieces)))
+
+
+# 풀이 2
+pieces = [1, 1, 2, 2, 2, 8]
+
+white_pieces = list(map(int, input().split()))
+
+result = [piece - white_piece for piece, white_piece in zip(pieces, white_pieces)]
+
+print(' '.join(map(str, result)))
