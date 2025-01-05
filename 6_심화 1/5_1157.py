@@ -13,4 +13,37 @@
 # 단, 가장 많이 사용된 알파벳이 여러 개 존재하는 경우에는 ?를 출력한다.
 
 
-# 풀이
+# 풀이 1
+text = input().strip().upper()
+
+alphabet_count = {}
+
+for char in text:
+    if char in alphabet_count:
+        alphabet_count[char] += 1
+    else:
+        alphabet_count[char] = 1
+
+max_count = max(alphabet_count.values())
+max_check = [key for key, value in alphabet_count.items() if value == max_count]
+
+if len(max_check) > 1:
+    print("?")
+else:
+    print(max_check[0])
+
+
+# 풀이 2
+text = input().upper()
+text_list = list(set(text))
+
+cnt = []
+
+for i in text_list:
+    count = text.count
+    cnt.append(count(i))
+
+if cnt.count(max(cnt)) > 1:
+    print("?")
+else:
+    print(text_list[(cnt.index(max(cnt)))])
