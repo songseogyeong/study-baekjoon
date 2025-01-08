@@ -46,4 +46,4 @@ for i in text_list:
 if cnt.count(max(cnt)) > 1:
     print("?")
 else:
-    print(text_list[(cnt.index(max(cnt)))])
+    print(text_list[cnt.index(max(cnt))])
