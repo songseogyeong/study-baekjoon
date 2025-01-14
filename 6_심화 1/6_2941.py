@@ -16,3 +16,11 @@
 
 
 # 풀이
+text = input()
+
+alphabet = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+
+for char in alphabet:
+    text = text.replace(char, '*')
+
+print(len(text))
