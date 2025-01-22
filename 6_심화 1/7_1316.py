@@ -15,8 +15,43 @@
 # 첫째 줄에 그룹 단어의 개수를 출력한다.
 
 
-# 풀이
+# 풀이 1
 N = int(input())
+cnt = N
 
 for _ in range(N):
-    text = input()
+    word = input()
+
+    for i in range(0, len(word)-1):
+        if word[i] == word[i+1]:
+            pass
+        elif word[i] in word[i+1:]:
+            cnt -= 1
+            break
+
+print(cnt)
+
+
+# 풀이 2
+N = int(input())
+count = 0
+
+for _ in range(N):
+    word = input()
+    set_word = set()
+    before_word = ''
+    check_word = True
+
+    for alphabet in word:
+        if alphabet != before_word:
+            if alphabet in set_word:
+                check_word = False
+                break
+            else:
+                set_word.add(alphabet)
+                before_word = alphabet
+
+    if check_word:
+        count += 1
+
+print(count)
