@@ -19,3 +19,37 @@
 
 
 # 풀이
+total_score = 0
+total_credit = 0
+
+for _ in range(20):
+  subject = list(input().split())
+  credit = float(subject[1])
+
+  if subject[2] == "A+":
+    grade = 4.5
+  elif subject[2] == "A0":
+    grade = 4.0
+  elif subject[2] == "B+":
+    grade = 3.5
+  elif subject[2] == "B0":
+    grade = 3.0
+  elif subject[2] == "C+":
+    grade = 2.5
+  elif subject[2] == "C0":
+    grade = 2.0
+  elif subject[2] == "D+":
+    grade = 1.5
+  elif subject[2] == "D0":
+    grade = 1.0
+  elif subject[2] == "F":
+    grade = 0.0
+  else:
+    continue
+  
+  total_score += credit * grade
+  total_credit += credit
+
+result = total_score / total_credit
+
+print(f"{result:.6f}")
