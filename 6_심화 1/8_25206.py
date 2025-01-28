@@ -18,7 +18,7 @@
 # 정답과의 절대오차 또는 상대오차가 10-4 이하이면 정답으로 인정한다.
 
 
-# 풀이
+# 풀이 1
 total_score = 0
 total_credit = 0
 
@@ -49,6 +49,27 @@ for _ in range(20):
   
   total_score += credit * grade
   total_credit += credit
+
+result = total_score / total_credit
+
+print(f"{result:.6f}")
+
+
+# 풀이 2
+rating = ["A+", "A0", "B+", "B0", "C+", "C0", "D+", "D0", "F"]
+grade = [4.5, 4.0, 3.5, 3.0, 2.5, 2.0, 1.5, 1.0, 0.0]
+
+total_score = 0
+total_credit = 0
+
+for _ in range(20):
+  subject = list(input().split())
+
+  if subject[2] == "P":
+    continue
+  else:
+    total_score += float(subject[1]) * grade[rating.index(subject[2])]
+    total_credit += float(subject[1])
 
 result = total_score / total_credit
 
