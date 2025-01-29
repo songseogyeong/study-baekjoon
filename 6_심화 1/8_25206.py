@@ -74,3 +74,4 @@ for _ in range(20):
 result = total_score / total_credit
 
 print(f"{result:.6f}")
+
