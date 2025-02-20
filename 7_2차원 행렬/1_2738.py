@@ -13,3 +13,4 @@
 
 
 # 풀이
+N, M = map(int, input().split())
