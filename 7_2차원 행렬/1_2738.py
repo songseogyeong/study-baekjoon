@@ -14,3 +14,25 @@
 
 # 풀이
 N, M = map(int, input().split())
+
+A, B = [], []
+
+
+# 행렬 A 입력
+for _ in range(N):
+  a_row = list(map(int, input().split()))
+  A.append(a_row)
+
+# 행렬 B 입력
+for _ in range(N):
+  b_row = list(map(int, input().split()))
+  B.append(b_row)
+
+for row in range(N):
+  result = []
+
+  for column in range(M):
+    result.append(A[row][column] + B[row][column])
+
+  print(' '.join(map(str, result)))
+  
