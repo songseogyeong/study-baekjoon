@@ -14,4 +14,17 @@
 # 최댓값이 두 개 이상인 경우 그 중 한 곳의 위치를 출력한다.
 
 
-# 풀이
+# 풀이 1
+table = [list(map(int, input().split())) for _ in range(9)]
+max_num = 0
+row_index , column_index = 0, 0
+
+for row in range(len(table)):
+  row_max = max(table[row])
+  if row_max >= max_num:
+    max_num = row_max
+    row_index = row + 1
+    column_index = table[row].index(row_max) + 1
+
+print(max_num)
+print(row_index, column_index)
