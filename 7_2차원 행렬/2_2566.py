@@ -28,3 +28,18 @@ for row in range(len(table)):
 
 print(max_num)
 print(row_index, column_index)
+
+# 풀이 2
+table = [list(map(int, input().split())) for _ in range(9)]
+max_num = 0
+row_index , column_index = 0, 0
+
+for row in range(len(table)):
+  for col in range (len(table[row])):
+    if table[row][col] >= max_num:
+      max_num = table[row][col]
+      row_index = row + 1
+      column_index = col + 1
+
+print(max_num)
+print(row_index, column_index)
